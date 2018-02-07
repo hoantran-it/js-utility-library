@@ -9,22 +9,19 @@ const DateTime = {
 }
 
 const correctTimezone = (time) => {
-  return moment(time).tz(mtz.tz.guess());
+  return moment(time).tz(moment.tz.guess());
 }
 
 const getRelativeTime = (time, startOf = "minute")=> {
-  let correctTime = correctTimezone(time);
-  return moment(correctTime).startOf(startOf).fromNow();
+  return moment(time).startOf(startOf).fromNow();
 }
 
 const getDateTime = (time, format = DateTime.DATE_TIME_SECOND_STANDARD_FORMAT)=> {
-  let correctTime = correctTimezone(time);
-  return moment(correctTime).format(format);
+  return moment(time).format(format);
 }
 
 const isSame = (time, object = DateTime.DATE_TIME_SECOND_STANDARD_FORMAT)=> {
-  let correctTime = correctTimezone(time);
-  return moment().isSame(moment(correctTime), "day");
+  return moment().isSame(moment(time), "day");
 }
 
 export default {

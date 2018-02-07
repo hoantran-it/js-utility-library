@@ -22,28 +22,25 @@ var DateTime = {
 };
 
 var correctTimezone = function correctTimezone(time) {
-  return (0, _moment2.default)(time).tz(_momentTimezone2.default.tz.guess());
+  return (0, _moment2.default)(time).tz(_moment2.default.tz.guess());
 };
 
 var getRelativeTime = function getRelativeTime(time) {
   var startOf = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "minute";
 
-  var correctTime = correctTimezone(time);
-  return (0, _moment2.default)(correctTime).startOf(startOf).fromNow();
+  return (0, _moment2.default)(time).startOf(startOf).fromNow();
 };
 
 var getDateTime = function getDateTime(time) {
   var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DateTime.DATE_TIME_SECOND_STANDARD_FORMAT;
 
-  var correctTime = correctTimezone(time);
-  return (0, _moment2.default)(correctTime).format(format);
+  return (0, _moment2.default)(time).format(format);
 };
 
 var isSame = function isSame(time) {
   var object = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DateTime.DATE_TIME_SECOND_STANDARD_FORMAT;
 
-  var correctTime = correctTimezone(time);
-  return (0, _moment2.default)().isSame((0, _moment2.default)(correctTime), "day");
+  return (0, _moment2.default)().isSame((0, _moment2.default)(time), "day");
 };
 
 exports.default = {
