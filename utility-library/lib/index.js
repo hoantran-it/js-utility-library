@@ -3,50 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var shortenString = exports.shortenString = function shortenString(string) {
-  var maxLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
-  var hasEllipsis = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+exports.DateTimeUtils = exports.StringUtils = undefined;
 
-  if (string && string.length > maxLength) {
-    if (hasEllipsis) {
-      return string.substring(0, maxLength - 3) + '...';
-    } else {
-      return string.substring(0, maxLength);
-    }
-  }
-  return string;
-};
+var _DateTimeUtils = require('./DateTimeUtils.js');
 
-var buildUrlFilter = exports.buildUrlFilter = function buildUrlFilter() {
-  var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-  var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-  var sortingArr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+var _DateTimeUtils2 = _interopRequireDefault(_DateTimeUtils);
 
-  var filter = 'page=' + page + '&size=' + size;
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+var _StringUtils = require('./StringUtils.js');
 
-  try {
-    for (var _iterator = sortingArr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var sorting = _step.value;
+var _StringUtils2 = _interopRequireDefault(_StringUtils);
 
-      filter = filter + '&sort=' + sorting.fieldName + ',' + sorting.order;
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  return filter;
-};
+exports.StringUtils = _StringUtils2.default;
+exports.DateTimeUtils = _DateTimeUtils2.default;
