@@ -19,28 +19,50 @@ var DateTime = {
   DATE_STANDARD_FORMAT: "MMM DD YYYY",
   DATE_TIME_STANDARD_FORMAT: "MMM DD YYYY HH:mm",
   DATE_TIME_SECOND_STANDARD_FORMAT: "MMM DD YYYY HH:mm:ss"
+
+  /**
+   * Convert to current timezone
+   * @param time: must be UTC timezone
+   * @returns {*}
+   */
+};var correctTimezone = function correctTimezone(time) {
+  return _moment2.default.utc(time).tz(_moment2.default.tz.guess());
 };
 
-var correctTimezone = function correctTimezone(time) {
-  return (0, _moment2.default)(time).tz(_moment2.default.tz.guess());
-};
-
+/**
+ * Fet relative time: 2 minutes ago, 3 hours ago,...
+ * @param time: must be UTC timezone
+ * @param startOf
+ * @returns {string}
+ */
 var getRelativeTime = function getRelativeTime(time) {
   var startOf = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "minute";
 
-  return (0, _moment2.default)(time).startOf(startOf).fromNow();
+  return correctTimezone(time).startOf(startOf).fromNow();
 };
 
+/**
+ * Get date time with format
+ * @param time: must be UTC timezone
+ * @param format
+ * @returns {*}
+ */
 var getDateTime = function getDateTime(time) {
   var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DateTime.DATE_TIME_SECOND_STANDARD_FORMAT;
 
-  return (0, _moment2.default)(time).format(format);
+  return correctTimezone(time).format(format);
 };
 
+/**
+ *Correct time
+ * @param time
+ * @param object
+ * @returns {boolean|*}
+ */
 var isSame = function isSame(time) {
   var object = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DateTime.DATE_TIME_SECOND_STANDARD_FORMAT;
 
-  return (0, _moment2.default)().isSame((0, _moment2.default)(time), "day");
+  return correctTimezone(_moment2.default.utc()).isSame(correctTimezone(time), "day");
 };
 
 exports.default = {
