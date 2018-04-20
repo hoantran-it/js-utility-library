@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -22,7 +22,7 @@ var buildUrlFilter = function buildUrlFilter() {
   var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
   var sortingArr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
 
-  var filter = 'page=' + page + '&size=' + size;
+  var filter = "page=" + page + "&size=" + size;
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -31,7 +31,7 @@ var buildUrlFilter = function buildUrlFilter() {
     for (var _iterator = sortingArr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var sorting = _step.value;
 
-      filter = filter + '&sort=' + sorting.fieldName + ',' + sorting.order;
+      filter = filter + "&sort=" + sorting.fieldName + "," + sorting.order;
     }
   } catch (err) {
     _didIteratorError = true;
@@ -51,7 +51,18 @@ var buildUrlFilter = function buildUrlFilter() {
   return filter;
 };
 
+var getRandomString = function getRandomString() {
+  var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 12;
+
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }return text;
+};
+
 exports.default = {
   shortenString: shortenString,
-  buildUrlFilter: buildUrlFilter
+  buildUrlFilter: buildUrlFilter,
+  getRandomString: getRandomString
 };
