@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.NumberUtils = exports.DateTimeUtils = exports.StringUtils = undefined;
+exports.ArrayUtils = exports.NumberUtils = exports.DateTimeUtils = exports.StringUtils = undefined;
 
 var _DateTimeUtils = require('./DateTimeUtils.js');
 
@@ -17,8 +17,13 @@ var _NumberUtils = require('./NumberUtils.js');
 
 var _NumberUtils2 = _interopRequireDefault(_NumberUtils);
 
+var _ArrayUtils = require('./ArrayUtils.js');
+
+var _ArrayUtils2 = _interopRequireDefault(_ArrayUtils);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.StringUtils = _StringUtils2.default;
 exports.DateTimeUtils = _DateTimeUtils2.default;
 exports.NumberUtils = _NumberUtils2.default;
+exports.ArrayUtils = _ArrayUtils2.default;
