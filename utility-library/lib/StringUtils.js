@@ -3,6 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var defaultSorting = [{
+  fieldName: "created",
+  order: "desc"
+}];
+
 var shortenString = function shortenString(string) {
   var maxLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
   var hasEllipsis = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
@@ -20,7 +25,7 @@ var shortenString = function shortenString(string) {
 var buildUrlFilter = function buildUrlFilter() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-  var sortingArr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+  var sortingArr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultSorting;
 
   var filter = "page=" + page + "&size=" + size;
   var _iteratorNormalCompletion = true;

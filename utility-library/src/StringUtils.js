@@ -1,3 +1,8 @@
+const defaultSorting = [{
+  fieldName: "created",
+  order: "desc"
+}]
+
 const shortenString = (string, maxLength = 50, hasEllipsis = true) => {
   if (string && string.length > maxLength) {
     if (hasEllipsis) {
@@ -9,7 +14,7 @@ const shortenString = (string, maxLength = 50, hasEllipsis = true) => {
   return string;
 }
 
-const buildUrlFilter = (page = 0, size = 10, sortingArr = []) => {
+const buildUrlFilter = (page = 0, size = 10, sortingArr = defaultSorting) => {
   let filter = `page=${page}&size=${size}`;
   for (var sorting of sortingArr) {
     filter = `${filter}&sort=${sorting.fieldName},${sorting.order}`
