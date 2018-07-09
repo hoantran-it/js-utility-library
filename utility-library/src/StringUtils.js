@@ -30,8 +30,26 @@ const getRandomString = (length = 12) => {
   return text;
 }
 
+const replaceBrTagByNewline = (text) => {
+  if (text) {
+    return text.replace(/<br\s*\/?>/mg, "\n");
+  } else {
+    return "";
+  }
+}
+
+const replaceNewlineByBrTag = (text) => {
+  if (text) {
+    return text.replace(/\n/g, "<br/>");
+  } else {
+    return "";
+  }
+}
+
 export default {
   shortenString,
   buildUrlFilter,
-  getRandomString
+  getRandomString,
+  replaceBrTagByNewline,
+  replaceNewlineByBrTag
 }
