@@ -66,8 +66,26 @@ var getRandomString = function getRandomString() {
   }return text;
 };
 
+var replaceBrTagByNewline = function replaceBrTagByNewline(text) {
+  if (text) {
+    text.replace(/<br\s*\/?>/mg, "\n");
+  } else {
+    return "";
+  }
+};
+
+var replaceNewlineByBrTag = function replaceNewlineByBrTag(text) {
+  if (text) {
+    text.replace(/\n/g, "<br/>");
+  } else {
+    return "";
+  }
+};
+
 exports.default = {
   shortenString: shortenString,
   buildUrlFilter: buildUrlFilter,
-  getRandomString: getRandomString
+  getRandomString: getRandomString,
+  replaceBrTagByNewline: replaceBrTagByNewline,
+  replaceNewlineByBrTag: replaceNewlineByBrTag
 };
