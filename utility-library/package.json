@@ -1,6 +1,6 @@
 {
   "name": "utility-library",
-  "version": "1.0.22",
+  "version": "1.1.0",
   "description": "Utility library",
   "main": "./lib/index.js",
   "scripts": {
@@ -34,7 +34,10 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.17.0",
     "eslint-plugin-react": "^7.6.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "prop-types": "^15.6.2",
+    "react-truncate": "^2.4.0",
+    "react": "^16.5.2"
   },
   "dependencies": {
     "moment": "^2.20.1",
