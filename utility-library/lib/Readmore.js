@@ -120,9 +120,7 @@ ReadMore.defaultProps = {
 
 ReadMore.propTypes = {
   children: _propTypes2.default.node.isRequired,
-  lines: _propTypes2.default.number,
-  less: _propTypes2.default.string,
-  more: _propTypes2.default.string
+  lines: _propTypes2.default.number
 };
 
 exports.default = ReadMore;
