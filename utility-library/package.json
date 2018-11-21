@@ -1,6 +1,6 @@
 {
   "name": "utility-library",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Utility library",
   "main": "./lib/index.js",
   "scripts": {

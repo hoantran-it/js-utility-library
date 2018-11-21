@@ -82,10 +82,15 @@ var replaceNewlineByBrTag = function replaceNewlineByBrTag(text) {
   }
 };
 
+var convertQueryStringToJson = function convertQueryStringToJson(queryString) {
+  return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+};
+
 exports.default = {
   shortenString: shortenString,
   buildUrlFilter: buildUrlFilter,
   getRandomString: getRandomString,
   replaceBrTagByNewline: replaceBrTagByNewline,
-  replaceNewlineByBrTag: replaceNewlineByBrTag
+  replaceNewlineByBrTag: replaceNewlineByBrTag,
+  convertQueryStringToJson: convertQueryStringToJson
 };

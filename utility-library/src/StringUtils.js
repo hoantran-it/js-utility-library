@@ -46,10 +46,15 @@ const replaceNewlineByBrTag = (text) => {
   }
 }
 
+const convertQueryStringToJson = (queryString) => {
+  return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+}
+
 export default {
   shortenString,
   buildUrlFilter,
   getRandomString,
   replaceBrTagByNewline,
-  replaceNewlineByBrTag
+  replaceNewlineByBrTag,
+  convertQueryStringToJson
 }
