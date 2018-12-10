@@ -1,6 +1,6 @@
 {
   "name": "utility-library",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Utility library",
   "main": "./lib/index.js",
   "scripts": {
@@ -36,11 +36,11 @@
     "eslint-plugin-react": "^7.6.1",
     "rimraf": "^2.6.2",
     "prop-types": "^15.6.2",
-    "react-truncate": "^2.4.0",
     "react": "^16.5.2"
   },
   "dependencies": {
     "moment": "^2.20.1",
-    "moment-timezone": "^0.5.14"
+    "moment-timezone": "^0.5.14",
+    "react-truncate": "^2.4.0"
   }
 }
