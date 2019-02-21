@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Copy = exports.ReadMore = exports.ArrayUtils = exports.NumberUtils = exports.DateTimeUtils = exports.StringUtils = undefined;
+exports.CopyUtils = exports.ReadMore = exports.ArrayUtils = exports.NumberUtils = exports.DateTimeUtils = exports.StringUtils = undefined;
 
 var _DateTimeUtils = require('./DateTimeUtils.js');
 
@@ -36,4 +36,4 @@ exports.DateTimeUtils = _DateTimeUtils2.default;
 exports.NumberUtils = _NumberUtils2.default;
 exports.ArrayUtils = _ArrayUtils2.default;
 exports.ReadMore = _ReadMore2.default;
-exports.Copy = _CopyUtils2.default;
+exports.CopyUtils = _CopyUtils2.default;
