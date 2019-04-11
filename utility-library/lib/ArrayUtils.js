@@ -11,6 +11,13 @@ var removeDuplicate = function removeDuplicate(array, fieldName) {
   });
 };
 
+var extractFieldList = function extractFieldList(objectList, fieldName) {
+  return objectList.map(function (object, index) {
+    return object[fieldName];
+  });
+};
+
 exports.default = {
-  removeDuplicate: removeDuplicate
+  removeDuplicate: removeDuplicate,
+  extractFieldList: extractFieldList
 };

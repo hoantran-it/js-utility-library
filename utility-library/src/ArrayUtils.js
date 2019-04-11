@@ -4,6 +4,13 @@ const removeDuplicate = (array, fieldName) => {
   }) === index);
 }
 
+const extractFieldList = (objectList, fieldName) => {
+  return objectList.map((object, index) => {
+    return object[fieldName];
+  });
+}
+
 export default {
-  removeDuplicate
+  removeDuplicate,
+  extractFieldList
 }
