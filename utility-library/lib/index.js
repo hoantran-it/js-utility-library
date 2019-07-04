@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CopyUtils = exports.ReadMore = exports.ArrayUtils = exports.NumberUtils = exports.DateTimeUtils = exports.StringUtils = undefined;
+exports.ObjectUtils = exports.CopyUtils = exports.ReadMore = exports.ArrayUtils = exports.NumberUtils = exports.DateTimeUtils = exports.StringUtils = undefined;
 
 var _DateTimeUtils = require('./DateTimeUtils.js');
 
@@ -29,6 +29,10 @@ var _CopyUtils = require('./CopyUtils');
 
 var _CopyUtils2 = _interopRequireDefault(_CopyUtils);
 
+var _ObjectUtils = require('./ObjectUtils');
+
+var _ObjectUtils2 = _interopRequireDefault(_ObjectUtils);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.StringUtils = _StringUtils2.default;
@@ -37,3 +41,4 @@ exports.NumberUtils = _NumberUtils2.default;
 exports.ArrayUtils = _ArrayUtils2.default;
 exports.ReadMore = _ReadMore2.default;
 exports.CopyUtils = _CopyUtils2.default;
+exports.ObjectUtils = _ObjectUtils2.default;
