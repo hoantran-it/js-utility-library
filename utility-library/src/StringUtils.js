@@ -50,11 +50,16 @@ const convertQueryStringToJson = (queryString) => {
   return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
 }
 
+const beautifyCardNumber = (cardNum) => {
+  return cardNum.match(/.{1,4}/g).join(" ");
+}
+
 export default {
   shortenString,
   buildUrlFilter,
   getRandomString,
   replaceBrTagByNewline,
   replaceNewlineByBrTag,
-  convertQueryStringToJson
+  convertQueryStringToJson,
+  beautifyCardNumber
 }

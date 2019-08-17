@@ -86,11 +86,16 @@ var convertQueryStringToJson = function convertQueryStringToJson(queryString) {
   return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
 };
 
+var beautifyCardNumber = function beautifyCardNumber(cardNum) {
+  return cardNum.match(/.{1,4}/g).join(" ");
+};
+
 exports.default = {
   shortenString: shortenString,
   buildUrlFilter: buildUrlFilter,
   getRandomString: getRandomString,
   replaceBrTagByNewline: replaceBrTagByNewline,
   replaceNewlineByBrTag: replaceNewlineByBrTag,
-  convertQueryStringToJson: convertQueryStringToJson
+  convertQueryStringToJson: convertQueryStringToJson,
+  beautifyCardNumber: beautifyCardNumber
 };
