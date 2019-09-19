@@ -46,8 +46,12 @@ const replaceNewlineByBrTag = (text) => {
   }
 }
 
-const convertQueryStringToJson = (queryString) => {
-  return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+const convertUrlQueryStringToJson = (queryString) => {
+  return Object.fromEntries(new URLSearchParams(queryString));
+}
+
+const convertJsonToUrlQueryString = (json) => {
+  return new URLSearchParams(json).toString();
 }
 
 const beautifyCardNumber = (cardNum) => {
@@ -60,6 +64,7 @@ export default {
   getRandomString,
   replaceBrTagByNewline,
   replaceNewlineByBrTag,
-  convertQueryStringToJson,
+  convertUrlQueryStringToJson,
+  convertJsonToUrlQueryString,
   beautifyCardNumber
 }

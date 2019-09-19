@@ -82,8 +82,12 @@ var replaceNewlineByBrTag = function replaceNewlineByBrTag(text) {
   }
 };
 
-var convertQueryStringToJson = function convertQueryStringToJson(queryString) {
-  return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+var convertUrlQueryStringToJson = function convertUrlQueryStringToJson(queryString) {
+  return Object.fromEntries(new URLSearchParams(queryString));
+};
+
+var convertJsonToUrlQueryString = function convertJsonToUrlQueryString(json) {
+  return new URLSearchParams(json).toString();
 };
 
 var beautifyCardNumber = function beautifyCardNumber(cardNum) {
@@ -96,6 +100,7 @@ exports.default = {
   getRandomString: getRandomString,
   replaceBrTagByNewline: replaceBrTagByNewline,
   replaceNewlineByBrTag: replaceNewlineByBrTag,
-  convertQueryStringToJson: convertQueryStringToJson,
+  convertUrlQueryStringToJson: convertUrlQueryStringToJson,
+  convertJsonToUrlQueryString: convertJsonToUrlQueryString,
   beautifyCardNumber: beautifyCardNumber
 };
